@@ -3,202 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royal Holloway Makers' Society</title>
+    <title>Portal Login | Royal Holloway Makers' Society</title>
     <style>
       /* Style Settings */
-      @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Noto+Music&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Noto+Music&display=swap');
 
       * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-      }
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-      body {
+    body {
           /* max-height: 600px; */
-          font-family: Roboto, sans-serif;
-          line-height: 1;
+        font-family: Roboto, sans-serif;
+        line-height: 1;
 
-          background-color: #5c9e31;
-          background-image: url('https://i.ibb.co/Lz54RV9G/RHULMakers-Soc-Banner-Green-5000x2868.png'); 
-          background-size: auto 75%; /* Makes the image cover the entire background */
-          background-position: center; /* Centers the image */
-          background-repeat: no-repeat; /* Prevents the image from repeating */
-      }
+        background-color: #5c9e31;
+        background-image: url('https://i.ibb.co/Lz54RV9G/RHULMakers-Soc-Banner-Green-5000x2868.png'); 
+        background-size: auto 75%; /* Makes the image cover the entire background */
+        background-position: center; /* Centers the image */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+    }
 
-      .container {
-          display: flex;
-          flex-direction: column; /* Ensures vertical stacking */
-          align-items: center;
-          gap: 0px; /* Adds spacing between items */
-      }
+    .container {
+        display: flex;
+        flex-direction: column; /* Ensures vertical stacking */
+        align-items: center;
+        gap: 0px; /* Adds spacing between items */
+    }
 
-      .title-text {
-          font-family: "Lexend", sans-serif;
-          font-size: 24px;
-          font-weight: bold;
-          color: #ffffff;
-          margin: 0px 0;
-          height: 20vh;
-          text-align: center;
-      }
+    .title-text {
+        font-family: "Lexend", sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        color: #ffffff;
+        margin: 0px 0;
+        height: 20vh;
+        text-align: center;
+    }
 
-      .text {
-          color: #ffffff;
-          font-weight: bold;
-          font-size: 16px;
-          margin: 0px 0;
+    .text {
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0px 0;
 
-          text-align: center;
-      }
+        text-align: center;
+    }
 
-      input {
-          flex: 1;
-          padding: 3px;
-          background: #ffffff;
-          color: #5c9e31;
-          border: 2.5px solid #92d3f5;
-          border-radius: 5px;
-          font-weight: bold;
-      }
+    input {
+        flex: 1;
+        padding: 3px;
+        background: #ffffff;
+        color: #5c9e31;
+        border: 2.5px solid #92d3f5;
+        border-radius: 5px;
+        font-weight: bold;
+    }
 
-      #togglePassword {
-          margin-left: 10px;
-          cursor: pointer;
-      }
+    #togglePassword {
+        margin-left: 10px;
+        cursor: pointer;
+    }
 
-      button {
-          padding: 5px 10px;
-          background: #92d3f5;
-          color: #ffd54f;
-          font-weight: bold;
-          text-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.25);;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-      }
+    button {
+        padding: 5px 10px;
+        background: #92d3f5;
+        color: #ffd54f;
+        font-weight: bold;
+        text-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.25);;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 
       /* Header */
-      header {
-          background-color: #5c9e31;
-          color: #ffffff;
-          padding: 5px 0;
-          text-align: center;
-          width: 100%;
-          position: fixed;
-      }
+    header {
+        background-color: #5c9e31;
+        color: #ffffff;
+        padding: 5px 0;
+        text-align: center;
+        width: 100%;
+        position: fixed;
+    }
 
       /* Navigation Bar */
-      nav {
-          background-color: #5c9e31;
-          width: 100%;
-          position: fixed;
-          padding: 10px 0;
-          
-          /* Dropdown Button */
-          .dropbtn {
-              font-family: Roboto, sans-serif;
-              background-color: transparent;
-              color: #ffffff;
-              padding: 0px;
-              font-size: 14px;
-              font-weight: bold;
-              border: none;
-          }
+    nav {
+        background-color: #5c9e31;
+        width: 100%;
+        position: fixed;
+        padding: 10px 0;
+        
+            /* Dropdown Button */
+            .dropbtn {
+                font-family: Roboto, sans-serif;
+                background-color: transparent;
+                color: #ffffff;
+                padding: 0px;
+                font-size: 14px;
+                font-weight: bold;
+                border: none;
+            }
 
-          /* The container <div> - needed to position the dropdown content */
-          .dropdown {
-              position: relative;
-              display: inline-block;
-          }
+            /* The container <div> - needed to position the dropdown content */
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
 
-          /* Dropdown Content (Hidden by Default) */
-          .dropdown-content {
-              font-family: Roboto, sans-serif;
-              font-size: 14px;
-              font-weight: bold;
-              color: #ffffff;
-              background-color: #5c9e31;
-              text-decoration: none;
-              background-color: transparent;
-              display: none;
-              position: absolute;
-              min-width: auto;
-              z-index: 1;
-          }
+            /* Dropdown Content (Hidden by Default) */
+            .dropdown-content {
+                font-family: Roboto, sans-serif;
+                font-size: 14px;
+                font-weight: bold;
+                color: #ffffff;
+                background-color: #5c9e31;
+                text-decoration: none;
+                background-color: transparent;
+                display: none;
+                position: absolute;
+                min-width: auto;
+                z-index: 1;
+            }
 
-          /* Links inside the dropdown */
-          .dropdown-content a {
-              color: #ffffff;
-              background-color: #5c9e31;
-              padding: 10px 16px;
-              text-decoration: none;
-              display: block;
-          }
+            /* Links inside the dropdown */
+            .dropdown-content a {
+                color: #ffffff;
+                background-color: #5c9e31;
+                padding: 10px 16px;
+                text-decoration: none;
+                display: block;
+            }
 
-          /* Change color of dropdown links on hover */
-          .dropdown-content a:hover {
-              background-color: #5c9e31;
-              color: #ffd54f;
-          }
+            /* Change color of dropdown links on hover */
+            .dropdown-content a:hover {
+                background-color: #5c9e31;
+                color: #ffd54f;
+            }
 
-          /* Show the dropdown menu on hover */
-          .dropdown:hover .dropdown-content {display: block;}
+            /* Show the dropdown menu on hover */
+            .dropdown:hover .dropdown-content {display: block;}
 
-          /* Change the background color of the dropdown button when the dropdown content is shown */
-          .dropdown:hover .dropbtn {
-              background-color: #5c9e31; 
-              color: #ffd54f;
-          }
-      }
+            /* Change the background color of the dropdown button when the dropdown content is shown */
+            .dropdown:hover .dropbtn {
+                background-color: #5c9e31; 
+                color: #ffd54f;
+            }
+        }
 
-      nav ul {
-          list-style: none;
-          display: flex;
-          justify-content: center;
-      }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
 
-      nav ul li {
-          margin: 0 10px;
-      }
+        nav ul li {
+            margin: 0 10px;
+        }
 
-      nav ul li a {
-          color: #ffffff;
-          text-decoration: none;
-          transition: text-shadow 0.3s ease;
-          font-weight: bold;
-          font-size: 14px;
-      }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: text-shadow 0.3s ease;
+            font-weight: bold;
+            font-size: 14px;
+        }
 
-      nav ul li a:hover {
-          color: #ffd54f;
-          text-decoration: none;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
+        nav ul li a:hover {
+            color: #ffd54f;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-      /* Main Content */
-      main {
-          color: #ffffff;
-          padding: 200px;
-          margin: 0px;
-          gap: 0px;
-          size: 100% 100%;
-          justify-content: center;
-          align-items: center;
-      }
+        /* Main Content */
+        main {
+            color: #ffffff;
+            padding: 200px;
+            margin: 0px;
+            gap: 0px;
+            size: 100% 100%;
+            justify-content: center;
+            align-items: center;
+        }
 
-      /* Footer */
-      footer {
-          background-color: #92d3f5;
-          color: #ffffff;
-          text-align: center;
-          font-size: 14px;
-          font-weight: bold;
-          padding: 15px 0;
-          width: 100%;
-          bottom: 0;
-          position: fixed;
-      }
+        /* Footer */
+        footer {
+            background-color: #92d3f5;
+            color: #ffffff;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 15px 0;
+            width: 100%;
+            bottom: 0;
+            position: fixed;
+        }
     </style>
 
     <!-- Favicon -->
@@ -218,32 +218,33 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <script type = "text/javascript">
-      // function toggleVisibility() {
-      //     const passwordField = document.getElementById("password");
-      //     const toggleButton = document.getElementById("togglePassword");
-          
-      //     if (passwordField.type === "password") {
-      //         passwordField.type = "text";
-      //         toggleButton.textContent = "👁️" ; //char code &#x1F441; // Visible state
-      //     } else {
-      //         passwordField.type = "password";
-      //         toggleButton.textContent = "&#x1F441;"; // Hidden state
-      //     }
-      // }
+        // function toggleVisibility() {
+        //     const passwordField = document.getElementById("password");
+        //     const toggleButton = document.getElementById("togglePassword");
+            
+        //     if (passwordField.type === "password") {
+        //         passwordField.type = "text";
+        //         toggleButton.textContent = "👁️" ; //char code &#x1F441; // Visible state
+        //     } else {
+        //         passwordField.type = "password";
+        //         toggleButton.textContent = "&#x1F441;"; // Hidden state
+        //     }
+        // }
 
-      function checkPassword() {
-          const password = document.getElementById("password").value;
-          const correctPassword = "3kM4?0c5UH1r"; // password
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+            const correctPassword = "3kM4?0c5UH1r"; // password
 
-          if (password === correctPassword) {
-              // Redirect to home
-              window.location.href = "home.html"; // Rediects to page
-          } else {
-              alert("Incorrect passcode. Access denied.");
-              passwordField.value = ""; // Clear the input field
-              passwordField.focus();    // Optional: Refocus on the input
-          }
-      }
+            if (password === correctPassword) {
+                // Redirect to home
+                window.location.href = "home.html"; // Rediects to page
+            } 
+            else {
+                alert("Incorrect passcode. Access denied.");
+                passwordField.value = ""; // Clear the input field
+                passwordField.focus();    // Optional: Refocus on the input
+            }
+        }
     </script>
 </head>
 <body>
@@ -254,7 +255,6 @@
             <li class="align-center"><a href="index.html">Lab Sheets</a></li>
             <li class="align-center"><a href="index.html">Combat Robotics</a></li>
             <li class="align-center"><a href="index.html">FAQs</a></li>
-            <li class="align-center"><a href="index.html">Login</a></li>
             <li class="align-center"></li><div class="dropdown"></li>
                 <button class="dropbtn">External Links</button>
                     <div class="dropdown-content">
@@ -264,6 +264,7 @@
                         <a href="https://www.instagram.com/rhulmakerssoc" class="nav-ext-links" target="_blank">Instagram</a>
                     </div>
             </div>
+            <li class="align-center"><a href="index.html">Login</a></li>
         </ul>
     </nav>
     
@@ -295,6 +296,28 @@
         </p>
     </footer>
 
-    <script type="module" src="websdk.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-analytics.js";
+          // TODO: Add SDKs for Firebase products that you want to use
+          // https://firebase.google.com/docs/web/setup#available-libraries
+
+          // Your web app's Firebase configuration
+          // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyC_M0TCwtCECo4rwnAVG4Yfg7xh90nX3ck",
+            authDomain: "rhulmakers-members-portal.firebaseapp.com",
+            projectId: "rhulmakers-members-portal",
+            storageBucket: "rhulmakers-members-portal.firebasestorage.app",
+            messagingSenderId: "423791052279",
+            appId: "1:423791052279:web:9162e22d5b1c665240daf2",
+            measurementId: "G-2NYNSD9SHQ"
+        };
+
+          // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
 </body>
 </html>
