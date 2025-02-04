@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royal Holloway Makers' Society</title>
-    <link rel="stylesheet" href="styles_portal.css">
+    <title>Soldering Certification | Royal Holloway Makers' Society</title>
+    <link rel="stylesheet" href="styles.css">
 
     <!-- Favicon -->
     <!-- Basic Favicon (ICO format) -->
@@ -21,17 +21,21 @@
 
     <!-- Web Manifest (for Progressive Web Apps) -->
     <link rel="manifest" href="/site.webmanifest">
-
-    <script type = "text/javascript" src="protection.js"></script>
 </head>
+
 <body>
+    <!-- Header -->
+    <header>
+        <h1></h1>
+    </header>
+
     <!-- Navigation Bar -->
     <nav>
         <ul>
-            <li class="align-center"><a href="membersportal.html">Events</a></li>
-            <li class="align-center"><a href="membersportal.html">Lab Sheets</a></li>
-            <li class="align-center"><a href="membersportal.html">Combat Robotics</a></li>
-            <li class="align-center"><a href="membersportal.html">FAQs</a></li>
+            <li class="align-center"><a href="events.html">Events</a></li>
+            <li class="align-center"><a href="labsheets.html">Lab Sheets</a></li>
+            <li class="align-center"><a href="robotics2025.html">Combat Robotics</a></li>
+            <li class="align-center"><a href="membersfaq.html">FAQs</a></li>
             <li class="align-center"></li><div class="dropdown"></li>
                 <button class="dropbtn">External Links</button>
                     <div class="dropdown-content">
@@ -43,25 +47,36 @@
             </div>
         </ul>
     </nav>
-    
+
+    <div class="header-h1">
+        <br> <br> <br>
+        <h1>Soldering Certification</h1> 
+        <br>
+    </div>
+
+    <!-- Main Content -->
     <main>
-        <div class="title-text">
-            <h1>
-                Hello.
-            </h1>
-        </div>
-        
-        <div class="text">
-            <form onsubmit="event.preventDefault(); checkPassword();">
-                <label for="password">
-                    Passcode : 
-                </label>
-                <input type="password" id="password" name="password" required>
-                <button type="submit">
-                    Access
-                </button>
-            </form>
-        </div>
+        <h2 class="header-h2">
+            GET CERTIFIED WITH US!
+        </h2>
+        <p class="desc-text">
+            A soldering certification session is required for all members to use the soldering irons in our electronic laboratories. <br>
+            This is to ensure that all members are able to use the equipment safely and effectively. <br>
+            Please request for a session with the form below if you are not yet certified with us, thanks. <br>
+            <br>
+        </p>
+
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe7epiMHRAem4hFLWErmJ7ACSrn6pEMYwhGCLXdQWaRFN0MYQ/viewform?embedded=true" 
+            width="640" 
+            height="2260"
+            class="iframe-container"
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0">
+            Loading…
+        </iframe>
+
+        <hr class="solid">
     </main>
 
     <!-- Footer -->
@@ -70,5 +85,6 @@
             &copy;  2025 Makers' Society of RHSU & Royal Holloway, University of London.
         </p>
     </footer>
+
 </body>
 </html>

@@ -192,6 +192,30 @@ hr.solid {
     border-top: 3px solid #bbbbbb;
 }
 
+.iframe-container {
+    position: center;
+    overflow: hidden;
+    width: 100%;
+    padding: 16px 0;
+    border-radius: 30px;
+}
+
+.button {
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #5c9e31;
+    color: #ffd54f; /* White text */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 14px;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #92d3f5;
+}
+
 /* Main Content */
 main {
     background-color: #ffffff;

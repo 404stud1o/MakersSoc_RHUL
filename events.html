@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royal Holloway Makers' Society</title>
-    <link rel="stylesheet" href="styles_portal.css">
+    <title>Events | Royal Holloway Makers' Society</title>
+    <link rel="stylesheet" href="styles.css">
 
     <!-- Favicon -->
     <!-- Basic Favicon (ICO format) -->
@@ -21,17 +21,21 @@
 
     <!-- Web Manifest (for Progressive Web Apps) -->
     <link rel="manifest" href="/site.webmanifest">
-
-    <script type = "text/javascript" src="protection.js"></script>
 </head>
+
 <body>
+    <!-- Header -->
+    <header>
+        <h1></h1>
+    </header>
+
     <!-- Navigation Bar -->
     <nav>
         <ul>
-            <li class="align-center"><a href="membersportal.html">Events</a></li>
-            <li class="align-center"><a href="membersportal.html">Lab Sheets</a></li>
-            <li class="align-center"><a href="membersportal.html">Combat Robotics</a></li>
-            <li class="align-center"><a href="membersportal.html">FAQs</a></li>
+            <li class="align-center"><a href="events.html">Events</a></li>
+            <li class="align-center"><a href="labsheets.html">Lab Sheets</a></li>
+            <li class="align-center"><a href="robotics2025.html">Combat Robotics</a></li>
+            <li class="align-center"><a href="membersfaq.html">FAQs</a></li>
             <li class="align-center"></li><div class="dropdown"></li>
                 <button class="dropbtn">External Links</button>
                     <div class="dropdown-content">
@@ -43,25 +47,30 @@
             </div>
         </ul>
     </nav>
-    
+
+
+    <div class="header-h1">
+        <br> <br> <br>
+        <h1>Events</h1> 
+        <br>
+    </div>
+
+    <!-- Main Content -->
     <main>
-        <div class="title-text">
-            <h1>
-                Hello.
-            </h1>
-        </div>
-        
-        <div class="text">
-            <form onsubmit="event.preventDefault(); checkPassword();">
-                <label for="password">
-                    Passcode : 
-                </label>
-                <input type="password" id="password" name="password" required>
-                <button type="submit">
-                    Access
-                </button>
-            </form>
-        </div>
+        <h2 class="header-h2">
+            EVENTS CALENDAR
+        </h2>
+
+        <iframe src="https://calendar.google.com/calendar/embed?height=800&wkst=2&ctz=Europe%2FLondon&showPrint=0&showTabs=0&showTz=0&showDate=0&showTitle=0&title=Makers'%20Society%20Event%20Calendar&hl=en_GB&src=Nm5mOG04NmdxbGVzYWsyZmtlc2NhZ3NjbDJjYWtiODNAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&src=bmFobGo0Y2UyMmwzMDNtNWo5MjN1aXQ3Y2NzYjUxdmlAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&src=NTMzNG5iaG81dnJ2N2xsbHA5OWI3MGxvOTcyYmFxcDRAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23D50000&color=%237CB342&color=%23F09300" 
+            style="border-width:0" 
+            width="1160" 
+            height="800" 
+            class="iframe-container"
+            frameborder="0" 
+            scrolling="no">
+        </iframe>
+
+        <hr class="solid">
     </main>
 
     <!-- Footer -->
@@ -70,5 +79,6 @@
             &copy;  2025 Makers' Society of RHSU & Royal Holloway, University of London.
         </p>
     </footer>
+
 </body>
 </html>
