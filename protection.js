@@ -20,5 +20,7 @@ function checkPassword() {
         window.location.href = "home.html"; // Rediects to page
     } else {
         alert("Incorrect passcode. Access denied.");
+        passwordField.value = ""; // Clear the input field
+        passwordField.focus();    // Optional: Refocus on the input
     }
 }
