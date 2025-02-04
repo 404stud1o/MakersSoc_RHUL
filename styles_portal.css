@@ -55,6 +55,11 @@ input {
     font-weight: bold;
 }
 
+#togglePassword {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
 button {
     padding: 5px 10px;
     background: #92d3f5;
