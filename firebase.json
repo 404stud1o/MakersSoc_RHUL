@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "rhulmakerssoc-portal",
     "public": "public",
     "ignore": [
       "firebase.json",
