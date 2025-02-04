@@ -20,23 +20,51 @@ body {
     margin-right: auto;
 }
 
-/* Image 1-Line Alignment */
-.image_alignment {
+/* Img 1-Line Alignment */
+.img_alignment {
     display: flex;
-    flex-wrap: wrap; /* Allows images to wrap to new lines */
+    flex-wrap: wrap; /* Allows imgs to wrap to new lines */
     gap: 10px;
     justify-content: center;
 }
 
-.image_alignment img {
+.img_alignment img {
     max-width: auto;
     border-radius: 8px; /* Optional: Rounded corners */
 }
 
 @media (max-width: 1920px) {
-    .image_alignment img {
+    .img_alignment img {
         max-width: 100%;
     }
+}
+
+/* iframe 1-Line Alignment */
+.iframe_alignment {
+    display: flex;
+    flex-wrap: wrap; /* Allows iframes to wrap to new lines */
+    gap: 20px;
+    justify-content: center;
+    margin: 0;
+}
+
+.iframe_alignment iframe {
+    max-width: auto;
+    border-radius: 0px; /* Optional: Rounded corners */
+}
+
+@media (max-width: 1920px) {
+    .iframe_alignment iframe {
+        max-width: 100%;
+    }
+}
+
+.text-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 42.5%;
+    justify-content: left;
+    margin: 0;
 }
 
 /* Header */
@@ -151,9 +179,9 @@ nav ul li a:hover {
     gap: 0;
 
     background-image: url('https://i.ibb.co/Lz54RV9G/RHULMakers-Soc-Banner-Green-5000x2868.png'); 
-    background-size: auto 250%; /* Makes the image cover the entire background */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: auto 250%; /* Makes the iframe cover the entire background */
+    background-position: center; /* Centers the iframe */
+    background-repeat: no-repeat; /* Prevents the iframe from repeating */
 
 }
 
@@ -178,6 +206,17 @@ nav ul li a:hover {
     text-align: left;
     padding: 8px 0;
 }
+
+.comment-text {
+    font-size: 10px;
+    font-weight: normal;
+    margin: 0;
+    color: #000000;
+    background-color: transparent;
+    text-align: left;
+    padding: 8px 0;
+}
+
 
 .inline-link {
     font-weight: bold;
