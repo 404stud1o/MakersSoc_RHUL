@@ -1,0 +1,179 @@
+/* Style Settings */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Noto+Music&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-height: 625px;
+    font-family: Roboto, sans-serif;
+    line-height: 1;
+
+    background-color: #5c9e31;
+    background-image: url('https://i.ibb.co/Lz54RV9G/RHULMakers-Soc-Banner-Green-5000x2868.png'); 
+    background-size: auto 75%; /* Makes the image cover the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Ensures vertical stacking */
+    align-items: center;
+    gap: 0px; /* Adds spacing between items */
+
+    max-height: 750px; /* Optional: Maximum height */
+}
+
+/* Header */
+header {
+    background-color: #5c9e31;
+    color: #ffffff;
+    padding: 5px 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    height: 0px;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #5c9e31;
+    width: 100%;
+    position: fixed;
+    padding: 10px 0;
+    
+    /* Dropdown Button */
+    .dropbtn {
+        font-family: Roboto, sans-serif;
+        background-color: transparent;
+        color: #ffffff;
+        padding: 0px;
+        font-size: 14px;
+        font-weight: bold;
+        border: none;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+        font-family: Roboto, sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #5c9e31;
+        text-decoration: none;
+        background-color: transparent;
+        display: none;
+        position: absolute;
+        min-width: auto;
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        color: #ffffff;
+        background-color: #5c9e31;
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {
+        background-color: #5c9e31;
+        color: #ffd54f;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {display: block;}
+
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown:hover .dropbtn {
+        background-color: #5c9e31; 
+        color: #ffd54f;
+    }
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    transition: text-shadow 0.3s ease;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #ffd54f;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.home-title-text {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: none;
+    font-weight: bold;
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    text-align: center;
+}
+
+.slogan-text {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: none;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    color: #ffffff;
+    margin: 0px 0;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    text-align: center;
+}
+
+/* Main Content */
+main {
+    color: #ffffff;
+    padding: 0px;
+    margin: 0px;
+    size: 50% 50%;
+}
+
+/* Footer */
+footer {
+    background-color: #92d3f5;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 15px 0;
+    width: 100%;
+    bottom: 0;
+
+    position: fixed;
+}

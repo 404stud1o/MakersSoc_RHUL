@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Royal Holloway Makers' Society</title>
-    <link rel="stylesheet" href="styles_title.css">
+    <link rel="stylesheet" href="styles_portal.css">
 
     <!-- Favicon -->
     <!-- Basic Favicon (ICO format) -->
@@ -21,16 +21,17 @@
 
     <!-- Web Manifest (for Progressive Web Apps) -->
     <link rel="manifest" href="/site.webmanifest">
-</head>
 
+    <script type = "text/javascript" src="protection.js"></script>
+</head>
 <body>
     <!-- Navigation Bar -->
     <nav>
         <ul>
-            <li class="align-center"><a href="events.html">Events</a></li>
-            <li class="align-center"><a href="labsheets.html">Lab Sheets</a></li>
-            <li class="align-center"><a href="robotics2025.html">Combat Robotics</a></li>
-            <li class="align-center"><a href="membersfaq.html">FAQs</a></li>
+            <li class="align-center"><a href="membersportal.html">Events</a></li>
+            <li class="align-center"><a href="membersportal.html">Lab Sheets</a></li>
+            <li class="align-center"><a href="membersportal.html">Combat Robotics</a></li>
+            <li class="align-center"><a href="membersportal.html">FAQs</a></li>
             <li class="align-center"></li><div class="dropdown"></li>
                 <button class="dropbtn">External Links</button>
                     <div class="dropdown-content">
@@ -41,22 +42,32 @@
                     </div>
         </ul>
     </nav>
-
+    
     <main>
-        <h1 class="home-title-text">
-            Royal Holloway Makers' Society
-        </h1>
+        <div class="title-text">
+            <h1>
+                Hello.
+            </h1>
+        </div>
+        
+        <div class="text">
+            <form onsubmit="event.preventDefault(); checkPassword();">
+                <label for="password">
+                    Passcode : 
+                </label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">
+                    Access
+                </button>
+            </form>
+        </div>
+    </main>
 
-        <p class="slogan-text">
-            Welcome Home, Members.
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy;  2025 Makers' Society of RHSU & Royal Holloway, University of London.
         </p>
-    </main>    
-
-        <!-- Footer -->
-        <footer>
-            <p>
-                &copy;  2025 Makers' Society of RHSU & Royal Holloway, University of London.
-            </p>
-        </footer>
+    </footer>
 </body>
 </html>
