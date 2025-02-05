@@ -17,11 +17,12 @@ Google Firebase
 <b>To connect and deploy new changes to the portal</b>
 
 1. Install Firebase CLI<br>
-   Firebase CLI Installation Instructions: https://firebase.google.com/docs/cli#install-cli-windows
-2. Log into CLI with Makers' Google account with `firebase login` command
-3. Connect to project `rhulmakers-members-portal` with `firebase projects:list` command
-4. Select web app `rhulmakerssoc-portal` 
-5. Enter command `firebase deploy` to deploy and publish latest version
+   Instructions: https://firebase.google.com/docs/cli#install-cli-windows
+2. Cut or copy the Firebase Tools into your local directory where the files for the portal is
+3. Log into CLI with Makers' Google account with `firebase login` command
+4. Connect to project `rhulmakers-members-portal` with `firebase projects:list` command
+5. Select web app `rhulmakerssoc-portal` 
+6. Enter command `firebase deploy` to deploy and publish latest version
 
 ### References
 Hosting Guidance: https://firebase.google.com/docs/hosting/
