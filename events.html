@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<script>
+  // Blocking check — runs before anything else loads/renders.
+  if (sessionStorage.getItem("rhsu_authenticated") !== "true") {
+    location.replace("index.html");
+  }
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Events | The Makers' Hub</title>
+<link rel="stylesheet" href="css/style.css" />
+    <!-- Favicon -->
+    <!-- Basic Favicon (ICO format) -->
+    <link rel="icon" type="image/x-icon" href="assets/img/green.ico">
+    <!-- Apple Touch Icon (iOS devices) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- Android/Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <!-- Web Manifest (for Progressive Web Apps) -->
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+
+<header class="banner">
+  <nav class="navbar">
+    <a href="home.html" class="brand"><img src="assets/img/blue.png" style="width: 10%; height: auto;"></a>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="workshops.html">Workshop Lab Sheets</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="faqs.html">FAQs</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="#" id="logout-link">Log Out</a></li>
+    </ul>
+  </nav>
+  <div class="page-title">
+    <h1>Events</h1>
+    <p class="subtitle">Subscribe to our events calendar to stay updated!</p>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="calendar-wrap">
+      <iframe
+        src="https://calendar.google.com/calendar/embed?height=800&wkst=2&ctz=Europe%2FLondon&showPrint=0&showTabs=0&showTz=0&showDate=0&showTitle=0&title=Makers'%20Society%20Event%20Calendar&hl=en_GB&src=Nm5mOG04NmdxbGVzYWsyZmtlc2NhZ3NjbDJjYWtiODNAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&src=bmFobGo0Y2UyMmwzMDNtNWo5MjN1aXQ3Y2NzYjUxdmlAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&src=NTMzNG5iaG81dnJ2N2xsbHA5OWI3MGxvOTcyYmFxcDRAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23D50000&color=%237CB342&color=%23F09300" 
+        style="border-width:0" 
+        width="1160" 
+        height="800"
+        title="Makers' Society Events Calendar"
+        style="border: 0"
+        frameborder="0"
+        scrolling="no">
+      </iframe>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2021-26 Makers' Society of RHSU &amp; Royal Holloway, University of London. All rights reserved, any unauthorised duplication is strictly prohibited.
+</footer>
+
+<script src="js/nav.js"></script>
+</body>
+</html>

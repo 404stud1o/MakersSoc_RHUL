@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<script>
+  // Blocking check — runs before anything else loads/renders.
+  if (sessionStorage.getItem("rhsu_authenticated") !== "true") {
+    location.replace("index.html");
+  }
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Members' FAQs | The Makers' Hub</title>
+<link rel="stylesheet" href="css/style.css" />
+    <!-- Favicon -->
+    <!-- Basic Favicon (ICO format) -->
+    <link rel="icon" type="image/x-icon" href="assets/img/green.ico">
+    <!-- Apple Touch Icon (iOS devices) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- Android/Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <!-- Web Manifest (for Progressive Web Apps) -->
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+
+<header class="banner">
+  <nav class="navbar">
+    <a href="home.html" class="brand"><img src="assets/img/blue.png" style="width: 10%; height: auto;"></a>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="workshops.html">Workshop Lab Sheets</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="faqs.html">FAQs</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="#" id="logout-link">Log Out</a></li>
+    </ul>
+  </nav>
+  <div class="page-title">
+    <h1>Members' FAQs</h1>
+    <p class="subtitle">Get your most frequently asked questions answered here</p>
+  </div>
+</header>
+
+<main>
+
+  <!--
+    Each section = a title, then an image + text box inline.
+    Replace the image src with your own photo/diagram, and add
+    class="reverse" to a faq-row to flip the image to the right.
+  -->
+
+  <section class="faq-section">
+    <h2>HOW CAN I GET MY DESIGN TO BE FABRICATED?</h2>
+    <div class="faq-row">
+      <div class="faq-image">
+        <img src="assets/img/faq-membership.jpg" alt="Members working together in the maker space" />
+      </div>
+      <div class="faq-text">
+        <p>You can e-mail your design to <a href="mailto:makers@royalholloway.su" target="_blank">makers@royalholloway.su</a>, 
+            and tell us what colour, and material (for laser-cut only) you would like. <br>
+            The files should be either an <b>STL</b> for 3D printing, or an <b>SVG</b> for laser-cutting. <br>
+            <br> 
+
+            <b><u>Colour Options</b></u> <br/>
+            <b>Laser Cutting</b> <br/>
+            SOLID: Black, White, Purple, Blue, Green, Red <br/>
+            TRANSPARENT: Clear, Light Blue, Dark Green, Red <br/>
+            FLUORESCENT: Orange, Yellow, Dark Blue, Red <br/>
+            <br>
+            <b>3D Printing</b> <br/>
+            PLA: Black, White, Red, Orange, Green, Blue... <br/>
+            <br/>
+            <i>(Please note that these colour options may change at any time. Please contact us for the colour options at the time. )</i><br/>
+            </p>
+        </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <h2>SOLDERING CERTIFICATION</h2>
+    <div class="faq-row reverse">
+      <div class="faq-image">
+        <img src="assets/img/faq-equipment.jpg" alt="3D printer and laser cutter in the workshop" />
+      </div>
+      <div class="faq-text">
+        <p>A soldering certification session is required for all members to use the soldering irons in our electronic laboratories. <br>
+            This is to ensure that all members are able to use the equipment safely and effectively. <br>
+            Please request for a session with the form below if you are not yet certified with us, thanks. <br>
+        </p>
+
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe7epiMHRAem4hFLWErmJ7ACSrn6pEMYwhGCLXdQWaRFN0MYQ/viewform?embedded=true" 
+            width=auto
+            height="800"
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0">
+            Loading…
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <h2>WHEN CAN I ACCESS THE ELETRONICS & PC LABS?</h2>
+    <div class="faq-row">
+      <div class="faq-image">
+        <img src="assets/img/faq-safety.jpg" alt="Member wearing safety goggles while using a tool" />
+      </div>
+      <div class="faq-text">
+        <p>As a member, you can access the SHILLING-1-06 electronics lab as long as there is at least a technician & a member of the committee present. <br>
+            The preset lab access hours for societies are Wednesday 13:00-17:00, which will usually be our workshop times. <br>
+            If you would like use the lab equipments outside these hours, 
+            please ask one of the committee members for the availability of the lab. <br>
+            Alternatively, you can also check the detailed timetable of the lab on the RHUL Timetable System. 
+            Simply go to <b>'Location'</b>, select the <b>'Electronics Engineering'</b> department, and <b>'SHILLING-1-06'</b>, then select the week(s) and "View Timetable" <br>
+            <br>
+        </p>
+        <p style="color: #ff0000; text-align: center;">
+            <b>*** There will be no access available during week 12 & 28 due to EE1000 & EE2000 project deadlines. ***</b> <br>
+            <br>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <h2>WORKSHOPS</h2>
+    <div class="faq-row reverse">
+      <div class="faq-image">
+        <img src="assets/img/faq-materials.jpg" alt="Shelves of raw materials in the workshop" />
+      </div>
+      <div class="faq-text">
+        <p>All workshops will be scheduled on a <b>Wednesday afternoon</b>, usually <b>15:00-17:00</b>, at <b>SHILLING-1-06 electronic lab</b>. <br>
+            The detailed schedule for all the workshops will be published on weekly basis, 
+            please keep track of any news & announcements through the member's 
+            <a href="https://chat.whatsapp.com/HjIsilawLZ2HgsxRGEv0sA" target="_blank" style="font-weight: bold; color: #5c9e31;">
+                WhatsApp group chat</a>, our
+            <a href="https://discord.com/invite/EcwhFKFvaS" target="_blank" style="font-weight: bold; color: #5865F2;">
+                Discord server</a>, the <b>event calendar</b> on the website or our 
+            <a href="https://www.instagram.com/rhulmakerssoc" target="_blank" style="font-weight: bold; color: #a838f3;">
+                Instagram</a>. <br>
+            <br>
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2021-26 Makers' Society of RHSU &amp; Royal Holloway, University of London. All rights reserved, any unauthorised duplication is strictly prohibited.
+</footer>
+
+<script src="js/nav.js"></script>
+</body>
+</html>

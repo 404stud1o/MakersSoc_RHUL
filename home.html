@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<script>
+  // Blocking check — runs before anything else loads/renders.
+  if (sessionStorage.getItem("rhsu_authenticated") !== "true") {
+    location.replace("index.html");
+  }
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>The Makers' Hub</title>
+<link rel="stylesheet" href="css/style.css" />
+    <!-- Favicon -->
+    <!-- Basic Favicon (ICO format) -->
+    <link rel="icon" type="image/x-icon" href="assets/img/green.ico">
+    <!-- Apple Touch Icon (iOS devices) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- Android/Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <!-- Web Manifest (for Progressive Web Apps) -->
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+
+<header class="banner">
+  <nav class="navbar">
+    <a href="home.html" class="brand"><img src="assets/img/blue.png" style="width: 10%; height: auto;"></a>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="workshops.html">Workshop Lab Sheets</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="faqs.html">FAQs</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="#" id="logout-link">Log Out</a></li>
+    </ul>
+  </nav>
+  <div class="page-title">
+    <h1>Welcome Back, Members!</h1>
+    <p class="subtitle">This is the new hub for all of our makers!</p>
+  </div>
+</header>
+
+<main>
+  <section class="link-grid">
+    <a class="link-tile" href="workshops.html">
+      <h3>Workshop Lab Sheets</h3>
+      <p>Access all the workshop lab sheets</p>
+    </a>
+    <a class="link-tile" href="events.html">
+      <h3>Events</h3>
+      <p>Check our calendar for upcoming socials, workshops</p>
+    </a>
+    <a class="link-tile" href="faqs.html">
+      <h3>Members' FAQs</h3>
+      <p>Get your most frequently asked questions answered here</p>
+    </a>
+    <a class="link-tile" href="about.html">
+      <h3>About Us</h3>
+      <p>Our email, address, and where to find us on social media</p>
+    </a>
+  </section>
+</main>
+
+<footer>
+  &copy; 2021-26 Makers' Society of RHSU &amp; Royal Holloway, University of London. All rights reserved, any unauthorised duplication is strictly prohibited.
+</footer>
+
+<script src="js/nav.js"></script>
+</body>
+</html>

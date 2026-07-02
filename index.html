@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>The Makers' Hub</title>
+<link rel="stylesheet" href="css/style.css" />
+    <!-- Favicon -->
+    <!-- Basic Favicon (ICO format) -->
+    <link rel="icon" type="image/x-icon" href="assets/img/green.ico">
+    <!-- Apple Touch Icon (iOS devices) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- Android/Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <!-- Web Manifest (for Progressive Web Apps) -->
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body class="gate-body">
+
+  <div class="gate-card">
+    <div class="society-mark"><img src="assets/img/blue.png" alt="Logo"></div>
+    <h1>The Makers' Hub</h1>
+    <p class="gate-tagline">Royal Holloway Makers' Society</p>
+
+    <form id="gate-form" autocomplete="on">
+      <label for="gate-password" style="display:none;">Password</label>
+      <input
+        type="password"
+        id="gate-password"
+        name="password"
+        placeholder="Enter password"
+        autocomplete="current-password"
+        required
+      />
+      <p class="gate-error" id="gate-error"></p>
+      <button type="submit" class="btn">Login</button>
+    </form>
+
+    <p class="gate-footnote">&copy; 2021-26 Makers' Society of RHSU &amp; Royal Holloway, University of London. All rights reserved.</p>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

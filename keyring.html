@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Society Keyrings | Royal Holloway Makers' Society</title>
+<link rel="stylesheet" href="css/style.css" />
+    <!-- Favicon -->
+    <!-- Basic Favicon (ICO format) -->
+    <link rel="icon" type="image/x-icon" href="assets/img/blue.ico">
+    <!-- Apple Touch Icon (iOS devices) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!-- Android/Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <!-- Web Manifest (for Progressive Web Apps) -->
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+
+<header class="banner">
+  <nav class="navbar public">
+    <a href="index.html" class="nav-signin">Sign In</a>
+  </nav>
+  <div class="page-title">
+    <h1>Society Keyrings Quote</h1>
+    <p class="subtitle">Get a quote for a custom 3D printed keyrings for your student group</p>
+  </div>
+</header>
+
+<main>
+
+  <section class="card">
+    <div class="calc-intro">
+      <img src="assets/img/blue.png" alt="Makers' Society Logo" class="calc-logo">
+    </div>
+
+    <div class="form-group">
+      <label for="designType">Design Type:</label>
+      <select id="designType">
+        <option value="standard">Standard Preset Designs</option>
+        <option value="custom">Tailor-Made Custom Design</option>
+      </select>
+    </div>
+
+    <div id="standardCalculator" class="calc-standard">
+      <div class="form-group">
+        <label for="quantity">Number of Keyrings:</label>
+        <input type="number" id="quantity" min="1" value="1" step="1">
+      </div>
+
+      <div class="form-group">
+        <label for="modelSelect">Keyring Model:</label>
+        <select id="modelSelect">
+          <!-- Options are populated by JavaScript -->
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="keyringText">Text on Keyring: <span class="field-hint" id="charCount">(0/X characters)</span></label>
+        <input type="text" id="keyringText" maxlength="20" placeholder="Enter text here">
+      </div>
+
+      <div class="form-group">
+        <label for="color">Desired Colour (limited availability):</label>
+        <select id="color">
+          <option value="trans_aqua_blue">Translucent Aqua Blue</option>
+          <option value="black">Black</option>
+          <option value="white">White</option>
+          <option value="red">Red</option>
+          <option value="green">Green</option>
+          <option value="yellow">Yellow</option>
+          <option value="other">Other (Contact Us)</option>
+        </select>
+      </div>
+
+      <div class="calc-results">
+        <h2>Your Estimate</h2>
+        <p class="price-line">Total Price: <span id="totalPrice">£0.00</span></p>
+        <p class="price-line">Price Per Keyring: <span id="pricePerKeyring">£0.00</span></p>
+        <div class="calc-notes">
+          <p>* A flat service charge of £<span id="serviceChargeDisplay">5.00</span> is applied per order.</p>
+          <p>** Large orders (50+ keyrings) may involve in outsourcing, which could affect final pricing and turnaround. We'll confirm with you.</p>
+        </div>
+      </div>
+
+      <a href="#" id="orderInquiryButton" class="btn">Get Quote</a>
+    </div> <!-- End standardCalculator -->
+
+    <div id="customDesignMessage" class="hidden">
+      <p class="message-box">For complex or custom designs, please contact us directly to discuss your specific requirements and receive a personalised quote. We'd love to help bring your unique ideas to life!</p>
+      <a href="#" id="customQuoteButton" class="btn">Contact for Custom Quote</a>
+    </div>
+  </section>
+
+  <section class="card calc-contact">
+    <p>Ready to order or have questions?</p>
+    <p>Email: <a href="mailto:makers@royalholloway.su">makers@royalholloway.su</a></p>
+    <p>Instagram: <a href="https://instagram.com/rhulmakerssoc" target="_blank" rel="noopener">@rhulmakerssoc</a></p>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2021-26 Makers' Society of RHSU &amp; Royal Holloway, University of London. All rights reserved, any unauthorised duplication is strictly prohibited.
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const designTypeSelect = document.getElementById('designType');
+  const standardCalculatorSection = document.getElementById('standardCalculator');
+  const customDesignMessage = document.getElementById('customDesignMessage');
+
+  const quantityInput = document.getElementById('quantity');
+  const modelSelect = document.getElementById('modelSelect');
+  const keyringText = document.getElementById('keyringText');
+  const charCountSpan = document.getElementById('charCount');
+  const colorSelect = document.getElementById('color');
+  const totalPriceSpan = document.getElementById('totalPrice');
+  const pricePerKeyringSpan = document.getElementById('pricePerKeyring');
+  const serviceChargeDisplay = document.getElementById('serviceChargeDisplay');
+
+  const orderInquiryButton = document.getElementById('orderInquiryButton');
+  const customQuoteButton = document.getElementById('customQuoteButton');
+
+  // --- Pricing constants & model data (edit these to update pricing) ---
+  const FLAT_SERVICE_CHARGE = 5.00;
+  const CONTACT_EMAIL = 'makers@royalholloway.su';
+
+  const MODELS = {
+    'standard_round': { name: 'Standard Round', baseCost: 0.13, maxCharacters: 20 },
+    'pickaxe': { name: 'Pickaxe', baseCost: 0.18, maxCharacters: 15 },
+    'bear': { name: 'Bear', baseCost: 0.20, maxCharacters: 10 }
+  };
+
+  // Quantity discount tiers (quantity : discount percentage)
+  const DISCOUNT_TIERS = {
+    '10': 0,
+    '25': 0.05,
+    '50': 0.10,
+    '9999': 0.15
+  };
+
+  function populateModelSelect() {
+    for (const key in MODELS) {
+      const option = document.createElement('option');
+      option.value = key;
+      option.textContent = MODELS[key].name;
+      modelSelect.appendChild(option);
+    }
+  }
+
+  function updateKeyringTextLimits() {
+    const selectedModelKey = modelSelect.value;
+    const maxChars = MODELS[selectedModelKey].maxCharacters;
+    keyringText.maxLength = maxChars;
+    charCountSpan.textContent = `(${keyringText.value.length}/${maxChars} characters)`;
+  }
+
+  serviceChargeDisplay.textContent = FLAT_SERVICE_CHARGE.toFixed(2);
+
+  function calculatePrice() {
+    let quantity = parseInt(quantityInput.value);
+    if (isNaN(quantity) || quantity < 1) {
+      quantity = 1;
+      quantityInput.value = 1;
+    }
+
+    const selectedModelKey = modelSelect.value;
+    const modelBaseCost = MODELS[selectedModelKey].baseCost;
+
+    let subtotalBeforeServiceCharge = modelBaseCost * quantity;
+
+    let discount = 0;
+    for (const tier in DISCOUNT_TIERS) {
+      if (quantity <= parseInt(tier)) {
+        discount = DISCOUNT_TIERS[tier];
+        break;
+      }
+    }
+    subtotalBeforeServiceCharge *= (1 - discount);
+
+    let totalPrice = subtotalBeforeServiceCharge + FLAT_SERVICE_CHARGE;
+    let calculatedPricePerKeyring = subtotalBeforeServiceCharge / quantity;
+
+    totalPriceSpan.textContent = `£${totalPrice.toFixed(2)}`;
+    pricePerKeyringSpan.textContent = `£${calculatedPricePerKeyring.toFixed(2)}`;
+  }
+
+  function handleDesignTypeChange() {
+    if (designTypeSelect.value === 'custom') {
+      standardCalculatorSection.classList.add('hidden');
+      customDesignMessage.classList.remove('hidden');
+    } else {
+      standardCalculatorSection.classList.remove('hidden');
+      customDesignMessage.classList.add('hidden');
+      calculatePrice();
+      updateKeyringTextLimits();
+    }
+  }
+
+  function generateStandardEmailLink() {
+    const quantity = quantityInput.value;
+    const selectedModel = MODELS[modelSelect.value].name;
+    const keyringTextValue = keyringText.value.trim();
+    const selectedColor = colorSelect.options[colorSelect.selectedIndex].text;
+    const totalPrice = totalPriceSpan.textContent;
+    const pricePerKeyring = pricePerKeyringSpan.textContent;
+
+    const subject = `Keyring Order Inquiry - ${quantity}x ${selectedModel}`;
+    let body = `Keyring Order Details:\n` +
+                `Quantity: ${quantity}\n` +
+                `Keyring Model: ${selectedModel}\n`;
+
+    if (keyringTextValue) {
+      body += `Text on Keyring: "${keyringTextValue}"\n`;
+    } else {
+      body += `Text on Keyring: None specified\n`;
+    }
+
+    body += `Desired Colour: ${selectedColor}\n` +
+            `Total Estimated Price (including service charge): ${totalPrice}\n` +
+            `Price Per Keyring (excluding service charge): ${pricePerKeyring}\n\n` +
+            `Notes: (A flat service charge of £${FLAT_SERVICE_CHARGE.toFixed(2)} is applied per order. Very large orders (>50 keyrings) may involve outsourcing, which could affect final pricing and turnaround. We'll confirm with you.)\n\n` +
+            `Please provide any additional details or questions here.`;
+
+    orderInquiryButton.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  function generateCustomEmailLink() {
+    const subject = `Custom Keyring Design Inquiry`;
+    const body = `I would like to inquire about a custom keyring design. Please contact me to discuss my requirements.`;
+    customQuoteButton.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  designTypeSelect.addEventListener('change', handleDesignTypeChange);
+  quantityInput.addEventListener('input', calculatePrice);
+  modelSelect.addEventListener('change', () => {
+    calculatePrice();
+    updateKeyringTextLimits();
+  });
+  keyringText.addEventListener('input', updateKeyringTextLimits);
+  colorSelect.addEventListener('change', calculatePrice);
+
+  quantityInput.addEventListener('input', generateStandardEmailLink);
+  modelSelect.addEventListener('change', generateStandardEmailLink);
+  keyringText.addEventListener('input', generateStandardEmailLink);
+  colorSelect.addEventListener('change', generateStandardEmailLink);
+
+  populateModelSelect();
+  handleDesignTypeChange();
+  updateKeyringTextLimits();
+  generateStandardEmailLink();
+  generateCustomEmailLink();
+});
+</script>
+
+</body>
+</html>

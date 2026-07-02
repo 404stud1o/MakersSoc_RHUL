@@ -1,0 +1,612 @@
+/* =========================================================
+   Royal Holloway Makers' Society — Members' Portal
+   Shared stylesheet
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@500&display=swap');
+
+:root {
+  /* Brand colours */
+  --colour-primary: #ffd54f;   /* yellow */
+  --colour-secondary-blue: #92d3f5;
+  --colour-secondary-green: #5c9e31;
+  --colour-text: #000000;
+  --colour-bg: #fdfaf3;        /* slight warm white */
+  --colour-card-bg: #ffffff;
+
+  /* Banner image — replace assets/img/banner.jpg with your own file
+     of the same name and it will update on every page automatically. */
+  --banner-image: url('../assets/img/banner.jpg');
+
+  /* Type */
+  --font-body: 'Roboto', Arial, sans-serif;
+  --font-heading: 'Montserrat', Arial, sans-serif;
+
+  --nav-height: 64px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 500;              /* medium */
+  font-size: 12pt;
+  line-height: 1;
+  color: var(--colour-text);
+  background-color: var(--colour-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  margin: 0 0 8pt 0;
+  line-height: 1;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;              /* bold */
+  line-height: 1;
+  margin: 0 0 8pt 0;
+  color: var(--colour-text);
+}
+
+h1 { font-size: 24pt; }
+h2 { font-size: 24pt; }
+h3 { font-size: 16pt; }
+
+a { color: inherit; }
+
+img { max-width: 100%; display: block; }
+
+/* ---------------------------------------------------------
+   Banner block: houses the (transparent) nav bar AND the
+   page title, sharing one uploaded background image.
+   --------------------------------------------------------- */
+.banner {
+  position: relative;
+  width: 100%;
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.35)), var(--banner-image);
+  background-size: cover;
+  background-position: center;
+  background-color: var(--colour-secondary-blue); /* fallback before banner is uploaded */
+}
+
+/* Nav bar — transparent so the banner image shows through */
+.navbar {
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background-color: transparent;
+}
+
+.navbar .brand {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 14pt;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 11pt;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.navbar .nav-links a:hover,
+.navbar .nav-links a.active {
+  border-bottom: 2px solid var(--colour-primary);
+  color: var(--colour-primary);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22pt;
+  cursor: pointer;
+}
+
+/* Page title area inside the banner */
+.page-title {
+  padding: 40px 24px 56px;
+  text-align: center;
+}
+
+.page-title h1 {
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.55);
+  margin-bottom: 0;
+}
+
+.page-title .subtitle {
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  font-size: 12pt;
+  margin-top: 8pt;
+}
+
+/* ---------------------------------------------------------
+   Main content
+   --------------------------------------------------------- */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+section { margin-bottom: 40px; }
+
+.card {
+  background-color: var(--colour-card-bg);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  padding: 24px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 11pt;
+  background-color: var(--colour-primary);
+  color: #000000;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 22px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--colour-secondary-blue);
+  color: var(--colour-text);
+}
+
+/* ---------------------------------------------------------
+   Footer
+   --------------------------------------------------------- */
+footer {
+  background-color: #1c1c1c;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 18px 20px;
+  font-size: 9pt;
+  line-height: 1.4;
+}
+
+/* ===========================================================
+   PAGE-SPECIFIC STYLES
+   =========================================================== */
+
+/* ---- Password page ---- */
+.gate-body {
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.45)), var(--banner-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.gate-card {
+  background-color: rgba(255,255,255,0.95);
+  border-radius: 12px;
+  padding: 44px 40px;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+}
+
+.gate-card .society-mark {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background-color: var(--colour-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 20pt;
+  background-image: url("assets/img/blue.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.gate-card h1 {
+  font-size: 18pt;
+  margin-bottom: 4pt;
+}
+
+.gate-card .gate-tagline {
+  font-size: 10pt;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.gate-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.gate-card input[type="password"] {
+  font-family: var(--font-body);
+  font-size: 12pt;
+  padding: 12px 14px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.gate-card input[type="password"]:focus {
+  border-color: var(--colour-secondary-blue);
+}
+
+.gate-card .btn {
+  width: 100%;
+}
+
+.gate-error {
+  color: #b33636;
+  font-size: 9pt;
+  min-height: 14px;
+  margin: 0;
+}
+
+.gate-footnote {
+  margin-top: 22px;
+  font-size: 8pt;
+  color: #777;
+}
+
+/* ---- Home / dashboard ---- */
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.link-tile {
+  display: block;
+  text-decoration: none;
+  color: var(--colour-text);
+  padding: 26px 20px;
+  border-radius: 10px;
+  border-left: 6px solid var(--colour-primary);
+  background-color: var(--colour-card-bg);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.link-tile:nth-child(2) { border-left-color: var(--colour-secondary-blue); }
+.link-tile:nth-child(3) { border-left-color: var(--colour-secondary-green); }
+.link-tile:nth-child(4) { border-left-color: var(--colour-primary); }
+
+.link-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.link-tile h3 { margin-bottom: 4pt; }
+.link-tile p { margin-bottom: 0; color: #444; }
+
+/* ---- Workshop lab sheets page ---- */
+.pdf-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.pdf-slot h3 {
+  font-size: 13pt;
+  background-color: var(--colour-primary);
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 6px 6px 0 0;
+  margin-bottom: 0;
+}
+
+.pdf-slot iframe {
+  width: 100%;
+  height: 480px;
+  border: 1px solid #ddd;
+  border-radius: 0 8px 8px 8px;
+  background-color: #fff;
+}
+
+/* ---- Events page ---- */
+.calendar-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.calendar-wrap iframe {
+  width: 100%;
+  max-width: 900px;
+  height: 650px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* ---- FAQs page ---- */
+.faq-section h2 {
+  border-bottom: 3px solid var(--colour-primary);
+  padding-bottom: 8pt;
+}
+
+.faq-row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 16px;
+}
+
+.faq-row .faq-image {
+  flex: 0 0 240px;
+  height: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #eee;
+  border: 1px solid #ddd;
+}
+
+.faq-row .faq-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.faq-row .faq-text {
+  flex: 1;
+}
+
+.faq-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* ---- About page ---- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.about-block h3 {
+  color: #000;
+}
+
+.about-block .icon-accent {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--colour-secondary-green);
+  margin-right: 8px;
+}
+
+.social-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #000;
+  background-color: var(--colour-card-bg);
+  border: 2px solid var(--colour-secondary-blue);
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 11pt;
+  font-weight: 500;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.social-btn:hover {
+  background-color: var(--colour-primary);
+  border-color: var(--colour-primary);
+  transform: translateY(-2px);
+}
+
+.social-btn i { font-size: 16pt; width: 20px; text-align: center; }
+
+/* ---------------------------------------------------------
+   Utility
+   --------------------------------------------------------- */
+.hidden { display: none !important; }
+
+/* ---- Sign-in-only nav variant (public pages, e.g. calculator) ---- */
+.navbar.public {
+  justify-content: flex-end;
+}
+
+.nav-signin {
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 11pt;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+  padding: 8px 18px;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav-signin:hover {
+  background-color: var(--colour-primary);
+  border-color: var(--colour-primary);
+  color: #000000;
+  text-shadow: none;
+}
+
+/* ---- Keyring price calculator page ---- */
+.calc-logo {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+}
+
+.calc-intro { text-align: center; margin-bottom: 24px; }
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  font-size: 11pt;
+  margin-bottom: 6px;
+}
+
+.form-group select,
+.form-group input[type="number"],
+.form-group input[type="text"] {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 12pt;
+  padding: 10px 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  background-color: #ffffff;
+  transition: border-color 0.15s ease;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+  border-color: var(--colour-secondary-blue);
+}
+
+.form-group .field-hint {
+  font-size: 9pt;
+  color: #666;
+  font-weight: 500;
+}
+
+.calc-results {
+  background-color: #fffaf0;
+  border-left: 6px solid var(--colour-primary);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 24px 0;
+}
+
+.calc-results h2 { font-size: 16pt; margin-bottom: 8pt; }
+
+.calc-results .price-line {
+  font-size: 13pt;
+  font-weight: 500;
+  margin-bottom: 6pt;
+}
+
+.calc-results .price-line span {
+  color: var(--colour-secondary-green);
+  font-weight: 700;
+}
+
+.calc-notes {
+  font-size: 9pt;
+  color: #666;
+  margin-top: 10px;
+}
+
+.calc-notes p { margin-bottom: 4pt; }
+
+.message-box {
+  background-color: #fffaf0;
+  border-left: 6px solid var(--colour-secondary-blue);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin-bottom: 20px;
+}
+
+.calc-contact { text-align: center; }
+.calc-contact p { margin-bottom: 6pt; }
+
+@media (max-width: 720px) {
+  .navbar .nav-links {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.85);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 24px;
+    gap: 16px;
+    display: none;
+  }
+
+  .navbar .nav-links.open { display: flex; }
+
+  .nav-toggle { display: block; }
+
+  .pdf-row,
+  .about-grid,
+  .link-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-row,
+  .faq-row.reverse {
+    flex-direction: column;
+  }
+
+  .faq-row .faq-image {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .pdf-slot iframe { height: 360px; }
+}
