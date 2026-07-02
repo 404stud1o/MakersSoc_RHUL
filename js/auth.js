@@ -16,12 +16,12 @@
    HOW TO CHANGE THE PASSWORD:
    1. Pick a new password.
    2. Generate its SHA-256 hash — e.g. open a terminal and run:
-        python3 -c "import hashlib;print(hashlib.sha256('Password'.encode()).hexdigest())"
+        python3 -c "import hashlib;print(hashlib.sha256('rhulmakerssoc'.encode()).hexdigest())"
       or use any trustworthy "SHA-256 generator" website.
    3. Paste the resulting hash below as PASSWORD_HASH.
    ========================================================= */
 
-const PASSWORD_HASH = "bec0bf4129a8eff1c82f1a1e5fbe94719951c277ef29478d33639f69f58ab779";
+const PASSWORD_HASH = "bec0bf4129a8eff1c82f1a1e5fbe94719951c277ef29478d33639f69f58ab779"; // SHA-256 hash of the password
 
 async function sha256(message) {
   const data = new TextEncoder().encode(message);
