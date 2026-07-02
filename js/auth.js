@@ -16,12 +16,12 @@
    HOW TO CHANGE THE PASSWORD:
    1. Pick a new password.
    2. Generate its SHA-256 hash — e.g. open a terminal and run:
-        python3 -c "import hashlib;print(hashlib.sha256('yourNewPassword'.encode()).hexdigest())"
+        python3 -c "import hashlib;print(hashlib.sha256('Password'.encode()).hexdigest())"
       or use any trustworthy "SHA-256 generator" website.
    3. Paste the resulting hash below as PASSWORD_HASH.
    ========================================================= */
 
-const PASSWORD_HASH = "9a21c42bdeb194f335299f4f7b4591ca4844b80ba75da4d11a5ad10f72e4facd"; // default password: makers2026
+const PASSWORD_HASH = "bec0bf4129a8eff1c82f1a1e5fbe94719951c277ef29478d33639f69f58ab779";
 
 async function sha256(message) {
   const data = new TextEncoder().encode(message);
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       sessionStorage.setItem("rhsu_authenticated", "true");
       window.location.href = "home.html";
     } else {
-      error.textContent = "Incorrect password. Please try again.";
+      error.textContent = "Invalid password. Please try again.";
       input.value = "";
       input.focus();
     }
