@@ -65,6 +65,13 @@ a { color: inherit; }
 
 img { max-width: 100%; display: block; }
 
+hr {
+  height: 3px;
+  border: none;
+  background: linear-gradient(to right, var(--colour-secondary-blue), var(--colour-secondary-green), var(--colour-primary),transparent);
+  margin: 28px;
+}
+
 /* ---------------------------------------------------------
    Banner block: houses the (transparent) nav bar AND the
    page title, sharing one uploaded background image.
@@ -493,6 +500,7 @@ footer {
   border-radius: 6px;
   padding: 8px 18px;
   transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  margin-left: 24px;
 }
 
 .nav-signin:hover {

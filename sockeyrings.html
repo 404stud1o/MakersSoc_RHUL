@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Society Keyrings | Royal Holloway Makers' Society</title>
 <link rel="stylesheet" href="css/style.css" />
+<meta name="robots" content="noindex, nofollow" />
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/blue.png">
     <!-- Apple Touch Icon (iOS devices) -->
@@ -18,6 +19,10 @@
 
 <header class="banner">
   <nav class="navbar public">
+    <ul class="nav-links">
+      <li><a href="https://su.rhul.ac.uk/societies/a-z/makers/" target="_blank">RHSU</a></li>
+      <li><a href="https://linktr.ee/rhulmakerssoc" target="_blank">Linktree</a></li>
+    </ul>
     <a href="index.html" class="nav-signin">Sign In</a>
   </nav>
   <div class="page-title">
@@ -36,8 +41,9 @@
     <div class="form-group">
       <label for="designType">Design Type:</label>
       <select id="designType">
-        <option value="standard">Standard Preset Designs</option>
-        <option value="custom">Tailor-Made Custom Design</option>
+        <option value="std3d">   Standard 3D Print Presets</option>
+        <option value="stdlaser">Standard Laser Cut Presets</option>
+        <option value="custom">  Tailor-Made Custom Design</option>
       </select>
     </div>
 
@@ -62,15 +68,16 @@
       <div class="form-group">
         <label for="colour">Desired Colour (Limited Availability):</label>
         <select id="colour">
-          <option value="white">     Jade White (10100)</option>
-          <option value="black">     Black (10101)</option>
-          <option value="orange">    Pumpkin Orange (10301)</option>
-          <option value="yellow">    Sunflower Yellow (10402)</option>
-          <option value="green">     Mistletoe Green (10502)</option>
-          <option value="purple">    Purple (10700)</option>
-          <option value="matte_red"> Matte Scarlet Red (11200)</option>
-          <option value="trans_aqua">Translucent Aqua Blue (13612)</option>
-          <option value="other">     Other (Contact Us)</option>
+          <option value="white">      Jade White (10100)</option>
+          <option value="black">      Black (10101)</option>
+          <option value="orange">     Pumpkin Orange (10301)</option>
+          <option value="yellow">     Sunflower Yellow (10402)</option>
+          <option value="green">      Mistletoe Green (10502)</option>
+          <option value="purple">     Purple (10700)</option>
+          <option value="matte_red">  Matte Scarlet Red (11200)</option>
+          <option value="matte_latte">Matte Latte Brown (11800)</option>
+          <option value="trans_aqua"> Translucent Aqua Blue (13612)</option>
+          <option value="other">      Other (Contact Us)</option>
         </select>
       </div>
 
@@ -95,17 +102,19 @@
 
   <section class="card calc-contact" style="align-items: center">
     <h2>Ready to order or have questions?</h2>
+    <section>
     <div class="social-grid">
       <a class="social-btn" href="mailto:makers@royalholloway.su" target="_blank" rel="noopener">
         <i class="fa-brands fa-email"></i> Email us 
       </a>
-      <a class="social-btn" href="https://ig.me/rhulmakerssoc" target="_blank" rel="noopener">
+      <a class="social-btn" href="https://instagram.com/rhulmakerssoc" target="_blank" rel="noopener">
         <i class="fa-brands fa-instagram"></i> DM us on Instagram
       </a>
       <a class="social-btn" href="https://threads.net/rhulmakerssoc" target="_blank" rel="noopener">
         <i class="fa-brands fa-threads"></i> DM us on Threads
       </a>
     </div>
+    </section>
   </section>
 </main>
 
@@ -136,12 +145,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const CONTACT_EMAIL = 'makers@royalholloway.su';
 
   const MODELS = {
-    'standard_round': { name: 'Standard Round',       baseCost: 0.13, maxCharacters: 20 },
-    'mc_pickaxe':     { name: 'MC Pixelated Pickaxe', baseCost: 0.18, maxCharacters: 15 },
-    'colossus_bear':  { name: 'Colossus Bear',        baseCost: 0.20, maxCharacters: 10 }
+    'std3dround':     { name: '[3D] Standard Round',       baseCost: 0.13, maxCharacters: 20 },
+    'mc_pickaxe':     { name: '[3D] MC Pixelated Pickaxe', baseCost: 0.18, maxCharacters: 15 },
+    'colossus_bear':  { name: '[3D] Colossus Bear',        baseCost: 0.20, maxCharacters: 10 }, 
+    'stdlasercircle': { name: '[Laser] Standard Circle with Engraved Logo & Text', baseCost: 0.08, maxCharacters: 20 },
+    'stdlaserhex':    { name: '[Laser] Standard Hexagon with Engraved Logo & Text', baseCost: 0.08, maxCharacters: 25 }
   };
 
-  // Quantity discount tiers (quantity : discount percentage)
+  // Quantity discount tiers percentage
   const DISCOUNT_TIERS = {
     '10':  0.00,
     '25':  0.05,
