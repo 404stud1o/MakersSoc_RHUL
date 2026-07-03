@@ -429,6 +429,20 @@ footer {
   margin-right: 8px;
 }
 
+.map-wrap {
+  margin-top: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+.map-wrap iframe {
+  width: 100%;
+  height: 280px;
+  border: 0;
+  display: block;
+}
+
 .social-grid {
   display: flex;
   flex-wrap: wrap;
