@@ -121,22 +121,22 @@ document.addEventListener('DOMContentLoaded', function () {
   const orderInquiryButton = document.getElementById('orderInquiryButton');
   const customQuoteButton = document.getElementById('customQuoteButton');
 
-  // --- Pricing constants & model data (edit these to update pricing) ---
+  // --- Pricing constants & model data ---
   const FLAT_SERVICE_CHARGE = 5.00;
   const CONTACT_EMAIL = 'makers@royalholloway.su';
 
   const MODELS = {
-    'standard_round': { name: 'Standard Round', baseCost: 0.13, maxCharacters: 20 },
-    'pickaxe': { name: 'Pickaxe', baseCost: 0.18, maxCharacters: 15 },
-    'bear': { name: 'Bear', baseCost: 0.20, maxCharacters: 10 }
+    'standard_round': { name: 'Standard Round',       baseCost: 0.13, maxCharacters: 20 },
+    'mc_pickaxe':     { name: 'MC Pixelated Pickaxe', baseCost: 0.18, maxCharacters: 15 },
+    'colossus_bear':  { name: 'Colossus Bear',        baseCost: 0.20, maxCharacters: 10 }
   };
 
   // Quantity discount tiers (quantity : discount percentage)
   const DISCOUNT_TIERS = {
-    '10': 0,
-    '25': 0.05,
-    '50': 0.10,
-    '9999': 0.15
+    '10':  0.00,
+    '25':  0.05,
+    '50':  0.10,
+    '999': 0.15
   };
 
   function populateModelSelect() {
