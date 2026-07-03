@@ -50,7 +50,7 @@
       <div class="form-group">
         <label for="modelSelect">Keyring Model:</label>
         <select id="modelSelect">
-          <!-- Options are populated by JavaScript -->
+          <!-- Options are populated by JS form line 137 -->
         </select>
       </div>
 
@@ -60,15 +60,16 @@
       </div>
 
       <div class="form-group">
-        <label for="color">Desired Colour (limited availability):</label>
-        <select id="color">
-          <option value="trans_aqua_blue">Translucent Aqua Blue</option>
-          <option value="black">Black</option>
-          <option value="white">White</option>
-          <option value="red">Red</option>
-          <option value="green">Green</option>
-          <option value="yellow">Yellow</option>
-          <option value="other">Other (Contact Us)</option>
+        <label for="colour">Desired Colour (Limited Availability):</label>
+        <select id="colour">
+          <option value="white">     Jade White (10100)</option>
+          <option value="black">     Black (10101)</option>
+          <option value="orange">    Pumpkin Orange (10301)</option>
+          <option value="yellow">    Sunflower Yellow (10402)</option>
+          <option value="green">     Mistletoe Green (10502)</option>
+          <option value="matte_red"> Matte Scarlet Red (11200)</option>
+          <option value="trans_aqua">Translucent Aqua Blue (13612)</option>
+          <option value="other">     Other (Contact Us)</option>
         </select>
       </div>
 
@@ -121,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const modelSelect = document.getElementById('modelSelect');
   const keyringText = document.getElementById('keyringText');
   const charCountSpan = document.getElementById('charCount');
-  const colorSelect = document.getElementById('color');
+  const colourSelect = document.getElementById('colour');
   const totalPriceSpan = document.getElementById('totalPrice');
   const pricePerKeyringSpan = document.getElementById('pricePerKeyring');
   const serviceChargeDisplay = document.getElementById('serviceChargeDisplay');
@@ -209,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const quantity = quantityInput.value;
     const selectedModel = MODELS[modelSelect.value].name;
     const keyringTextValue = keyringText.value.trim();
-    const selectedColor = colorSelect.options[colorSelect.selectedIndex].text;
+    const selectedcolour = colourSelect.options[colourSelect.selectedIndex].text;
     const totalPrice = totalPriceSpan.textContent;
     const pricePerKeyring = pricePerKeyringSpan.textContent;
 
@@ -224,10 +225,10 @@ document.addEventListener('DOMContentLoaded', function () {
       body += `Text on Keyring: None specified\n`;
     }
 
-    body += `Desired Colour: ${selectedColor}\n` +
+    body += `Desired Colour: ${selectedcolour}\n` +
             `Total Estimated Price (including service charge): ${totalPrice}\n` +
             `Price Per Keyring (excluding service charge): ${pricePerKeyring}\n\n` +
-            `Notes: (A flat service charge of £${FLAT_SERVICE_CHARGE.toFixed(2)} is applied per order. Very large orders (>50 keyrings) may involve outsourcing, which could affect final pricing and turnaround. We'll confirm with you.)\n\n` +
+            `Notes: (A flat service charge of £${FLAT_SERVICE_CHARGE.toFixed(2)} is applied per order. Very large orders (50+ keyrings) may involve in outsourcing, which could affect final pricing and turnaround. We'll confirm with you.)\n\n` +
             `Please provide any additional details or questions here.`;
 
     orderInquiryButton.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -246,12 +247,12 @@ document.addEventListener('DOMContentLoaded', function () {
     updateKeyringTextLimits();
   });
   keyringText.addEventListener('input', updateKeyringTextLimits);
-  colorSelect.addEventListener('change', calculatePrice);
+  colourSelect.addEventListener('change', calculatePrice);
 
   quantityInput.addEventListener('input', generateStandardEmailLink);
   modelSelect.addEventListener('change', generateStandardEmailLink);
   keyringText.addEventListener('input', generateStandardEmailLink);
-  colorSelect.addEventListener('change', generateStandardEmailLink);
+  colourSelect.addEventListener('change', generateStandardEmailLink);
 
   populateModelSelect();
   handleDesignTypeChange();
