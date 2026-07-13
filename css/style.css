@@ -494,6 +494,13 @@ footer {
   justify-content: space-between;
 }
 
+.public-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-left: 24px;
+}
+
 .nav-signin {
   display: inline-block;
   text-decoration: none;
@@ -505,7 +512,6 @@ footer {
   border-radius: 6px;
   padding: 8px 18px;
   transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-  margin-left: 24px;
 }
 
 .nav-signin:hover {
