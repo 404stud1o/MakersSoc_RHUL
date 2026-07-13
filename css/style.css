@@ -105,6 +105,11 @@ hr {
   letter-spacing: 0.5px;
 }
 
+img.brand-logo {
+  max-width: 32px;
+  max-height: 32px;
+}
+
 .navbar .nav-links {
   list-style: none;
   display: flex;
@@ -486,7 +491,7 @@ footer {
 
 /* ---- Sign-in-only nav variant (public pages, e.g. calculator) ---- */
 .navbar.public {
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .nav-signin {

@@ -19,12 +19,14 @@
 
 <header class="banner">
   <nav class="navbar public">
+    <a href="" class="brand"><img src="assets/img/blue.png" class="brand-logo"></a>
     <ul class="nav-links">
       <li><a href="https://su.rhul.ac.uk/societies/a-z/makers/" target="_blank">RHSU</a></li>
       <li><a href="https://linktr.ee/rhulmakerssoc" target="_blank">Linktree</a></li>
     </ul>
     <a href="index.html" class="nav-signin">Sign In</a>
   </nav>
+
   <div class="page-title">
     <h1>Society Keyrings Quote</h1>
     <p class="subtitle">Get a quote for a custom 3D printed keyrings for your student group</p>
@@ -32,11 +34,7 @@
 </header>
 
 <main>
-
   <section class="card">
-    <div class="calc-intro">
-      <img src="assets/img/blue.png" alt="Makers' Society Logo" class="calc-logo">
-    </div>
 
     <div class="form-group">
       <label for="designType">Design Type:</label>
@@ -145,11 +143,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const CONTACT_EMAIL = 'makers@royalholloway.su';
 
   const MODELS = {
-    'std3dround':     { name: '[3D] Standard Round',       baseCost: 0.13, maxCharacters: 20 },
-    'mc_pickaxe':     { name: '[3D] MC Pixelated Pickaxe', baseCost: 0.18, maxCharacters: 15 },
-    'colossus_bear':  { name: '[3D] Colossus Bear',        baseCost: 0.20, maxCharacters: 10 }, 
-    'stdlasercircle': { name: '[Laser] Standard Circle with Engraved Logo & Text', baseCost: 0.08, maxCharacters: 20 },
-    'stdlaserhex':    { name: '[Laser] Standard Hexagon with Engraved Logo & Text', baseCost: 0.08, maxCharacters: 25 }
+    'std3dround':     { name: '【3D】Standard Round',       baseCost: 0.13, maxCharacters: 20 },
+    'mc_pickaxe':     { name: '【3D】 MC Pixelated Pickaxe', baseCost: 0.18, maxCharacters: 15 },
+    'colossus_bear':  { name: '【3D】Colossus Bear (currently not available)',        baseCost: 0.20, maxCharacters: 10 }, 
+    'stdlasercircle': { name: '【Laser】Standard Circle with Engraved Logo & Text', baseCost: 0.08, maxCharacters: 20 },
+    'stdlaserhex':    { name: '【Laser】Standard Hexagon with Engraved Logo & Text', baseCost: 0.08, maxCharacters: 25 }
   };
 
   // Quantity discount tiers percentage
