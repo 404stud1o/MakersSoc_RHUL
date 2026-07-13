@@ -495,7 +495,7 @@ footer {
 }
 
 .public-nav-right {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 28px;
   margin-left: 24px;
